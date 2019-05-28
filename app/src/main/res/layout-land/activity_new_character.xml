@@ -1,0 +1,294 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".newCharacterActivity">
+
+    <!-- Dummy item to prevent AutoCompleteTextView from receiving focus -->
+    <LinearLayout
+        android:layout_width="34dp"
+        android:layout_height="39dp"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        tools:layout_editor_absoluteX="2dp"
+        tools:layout_editor_absoluteY="-49dp"
+        tools:visibility="invisible" />
+
+    <!-- :nextFocusUp and :nextFocusLeft have been set to the id of this component
+    to prevent the dummy from receiving focus again -->
+    <AutoCompleteTextView
+        android:id="@+id/autotext"
+        android:layout_width="20dp"
+        android:layout_height="15dp"
+        android:nextFocusLeft="@id/autotext"
+        android:nextFocusUp="@id/autotext"
+        tools:layout_editor_absoluteX="56dp"
+        tools:layout_editor_absoluteY="-48dp"
+        tools:visibility="invisible" />
+
+    <TextView
+        android:id="@+id/characterNameLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="36dp"
+        android:layout_marginLeft="36dp"
+        android:layout_marginTop="36dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:text="@string/characterNameLabel"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toStartOf="@+id/characterName"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/characterName"
+        android:layout_width="140dp"
+        android:layout_height="45dp"
+        android:layout_marginEnd="400dp"
+        android:layout_marginRight="400dp"
+        android:ems="10"
+        android:hint="@string/characterNameHint"
+        android:inputType="textPersonName"
+        android:textSize="16sp"
+        app:layout_constraintBaseline_toBaselineOf="@+id/characterNameLabel"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <ImageButton
+        android:id="@+id/rogueButton"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginRight="24dp"
+        android:background="@android:color/background_light"
+        app:layout_constraintEnd_toStartOf="@+id/mageButton"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/double_dagger" />
+
+    <TextView
+        android:id="@+id/rogueLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="@string/selectRogue"
+        app:layout_constraintEnd_toEndOf="@+id/rogueButton"
+        app:layout_constraintHorizontal_bias="0.6"
+        app:layout_constraintStart_toStartOf="@+id/rogueButton"
+        app:layout_constraintTop_toBottomOf="@+id/rogueButton" />
+
+    <ImageButton
+        android:id="@+id/warriorButton"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginRight="24dp"
+        android:background="@android:color/background_light"
+        app:layout_constraintEnd_toStartOf="@+id/rogueButton"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/characterName"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/double_sword" />
+
+    <ImageButton
+        android:id="@+id/mageButton"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginRight="24dp"
+        android:background="@android:color/background_light"
+        app:layout_constraintEnd_toStartOf="@+id/clericButton"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/double_magic" />
+
+    <ImageButton
+        android:id="@+id/clericButton"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="64dp"
+        android:layout_marginRight="64dp"
+        android:background="@android:color/background_light"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/double_cross" />
+
+    <TextView
+        android:id="@+id/mageLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="@string/selectMage"
+        app:layout_constraintEnd_toEndOf="@+id/mageButton"
+        app:layout_constraintHorizontal_bias="0.466"
+        app:layout_constraintStart_toStartOf="@+id/mageButton"
+        app:layout_constraintTop_toBottomOf="@+id/mageButton" />
+
+    <TextView
+        android:id="@+id/clericLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="@string/selectCleric"
+        app:layout_constraintEnd_toEndOf="@+id/clericButton"
+        app:layout_constraintStart_toStartOf="@+id/clericButton"
+        app:layout_constraintTop_toBottomOf="@+id/clericButton" />
+
+    <TextView
+        android:id="@+id/warriorLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="@string/selectWarrior"
+        app:layout_constraintEnd_toEndOf="@+id/warriorButton"
+        app:layout_constraintHorizontal_bias="0.7"
+        app:layout_constraintStart_toStartOf="@+id/warriorButton"
+        app:layout_constraintTop_toBottomOf="@+id/warriorButton" />
+
+    <androidx.constraintlayout.widget.Group
+        android:id="@+id/group"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/level_class_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="36dp"
+        android:layout_marginLeft="36dp"
+        android:layout_marginTop="20dp"
+        android:text="Level 1"
+        android:textSize="18sp"
+        android:visibility="invisible"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/characterNameLabel"
+        tools:visibility="invisible" />
+
+    <TextView
+        android:id="@+id/healthLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="36dp"
+        android:layout_marginLeft="36dp"
+        android:layout_marginBottom="12dp"
+        android:text="Health"
+        android:textSize="18sp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toTopOf="@+id/manaLabel"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:visibility="invisible" />
+
+    <TextView
+        android:id="@+id/manaLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="36dp"
+        android:layout_marginLeft="36dp"
+        android:layout_marginBottom="12dp"
+        android:text="Mana"
+        android:textSize="18sp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toTopOf="@+id/strengthLabel"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:visibility="invisible" />
+
+    <TextView
+        android:id="@+id/strengthLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="36dp"
+        android:layout_marginLeft="36dp"
+        android:layout_marginBottom="12dp"
+        android:text="Strength"
+        android:textSize="18sp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toTopOf="@+id/dexterityLabel"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:visibility="invisible" />
+
+    <TextView
+        android:id="@+id/dexterityLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="36dp"
+        android:layout_marginLeft="36dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:text="Dexterity"
+        android:textSize="18sp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/level_class_label"
+        app:layout_constraintVertical_bias="0.591"
+        tools:visibility="invisible" />
+
+    <TextView
+        android:id="@+id/healthValue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="36dp"
+        android:layout_marginLeft="36dp"
+        android:text="test"
+        android:textSize="18sp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="@+id/healthLabel"
+        app:layout_constraintStart_toEndOf="@+id/healthLabel"
+        app:layout_constraintTop_toTopOf="@+id/healthLabel"
+        app:layout_constraintVertical_bias="0.0"
+        tools:visibility="invisible" />
+
+    <TextView
+        android:id="@+id/manaValue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="44dp"
+        android:layout_marginLeft="44dp"
+        android:layout_marginBottom="12dp"
+        android:text="test"
+        android:textSize="18sp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="@+id/manaLabel"
+        app:layout_constraintStart_toEndOf="@+id/manaLabel"
+        app:layout_constraintTop_toTopOf="@+id/manaLabel"
+        app:layout_constraintVertical_bias="0.0"
+        tools:visibility="invisible" />
+
+    <TextView
+        android:id="@+id/strengthValue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginBottom="12dp"
+        android:text="test"
+        android:textSize="18sp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="@+id/strengthLabel"
+        app:layout_constraintStart_toEndOf="@+id/strengthLabel"
+        app:layout_constraintTop_toTopOf="@+id/strengthLabel"
+        app:layout_constraintVertical_bias="0.0"
+        tools:visibility="invisible" />
+
+    <TextView
+        android:id="@+id/dexterityValue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginBottom="100dp"
+        android:text="test"
+        android:textSize="18sp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="@+id/dexterityLabel"
+        app:layout_constraintStart_toEndOf="@+id/dexterityLabel"
+        app:layout_constraintTop_toTopOf="@+id/dexterityLabel"
+        app:layout_constraintVertical_bias="0.0"
+        tools:visibility="invisible" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

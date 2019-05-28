@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Epic_RPG_Thing</string>
+    <string name="characterNameLabel">Character Name:</string>
+    <string name="characterNameHint">Name</string>
+    <string name="selectRogue">Rogue</string>
+    <string name="selectMage">Mage</string>
+    <string name="selectWarrior">Warrior</string>
+    <string name="selectCleric">Cleric</string>
+</resources>
